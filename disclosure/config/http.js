@@ -47,8 +47,8 @@ module.exports.http = {
 
         console.log('init express middleware');
         passport.use(new FacebookStrategy({
-            clientID: '937702679657157',
-            clientSecret: 'ead4ac09cac850d7070f88a7f99d44d3',
+            clientID: '1486868604955758',
+            clientSecret: '8bbb080f387e4a1764616c4874b49807',
             callbackURL: 'http://localhost:1337/auth/facebook/callback',
             profileFields: ['id', 'displayName', 'name', 'gender', 'picture', 'emails']
         },
