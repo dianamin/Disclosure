@@ -13,8 +13,8 @@ module.exports = {
 		User.findOne().where({id: id}).exec(function(error, user) {
 			if(error)
 				console.log(error);
-			user.spent += amount;
-			user.budget -= amount;
+			user.spent += parseInt(amount);
+			user.budget -= parseInt(amount);
 			user.save(function(err, user) {
 					res.send(user);
 			})
