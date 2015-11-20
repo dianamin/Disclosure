@@ -47,7 +47,7 @@
 			<i class="material-icons">save</i>
 		</button>
 	</div>
-	<div class = "sticky-note" ng-repeat = "wish in wishes">
+	<div class = "sticky-note" ng-repeat = "wish in wishes | orderBy: '-priority'" ng-style = "{'animation': 'fadeIn', '-webkit-animation': 'fadeIn', 'animation-duration': wish.delay + 's', '-webkit-animation-duration': wish.delay + 's'}">
 		<h4> {{wish.product.name}} </h4>
 		<p> $ {{wish.price}} </p>
 		<input class="mdl-slider mdl-js-slider" type="range"

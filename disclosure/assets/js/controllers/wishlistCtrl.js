@@ -29,9 +29,12 @@ app.controller('wishlistCtrl', function($scope, $http) {
 	$http({method: 'GET', url: '../wishlist/get'}).success(function(data, status, headers, config) {
 		$scope.wishes = data;
 
-		for (var i = 0; i < $scope.wishes.length; i++)
+		for (var i = 0; i < $scope.wishes.length; i++) {
 			$scope.wishes[i].product = $scope.findProduct($scope.wishes[i].product_id);
+			$scope.wishes[i].delay = $scope.setDelay();
+		}
 	});
+
 
 	$scope.addWish = function(newWish) {
 		var data = {
@@ -46,8 +49,10 @@ app.controller('wishlistCtrl', function($scope, $http) {
 			$http({method: 'GET', url: '../wishlist/get'}).success(function(data, status, headers, config) {
 				$scope.wishes = data;
 
-				for (var i = 0; i < $scope.wishes.length; i++)
+				for (var i = 0; i < $scope.wishes.length; i++){
 					$scope.wishes[i].product = $scope.findProduct($scope.wishes[i].product_id);
+					$scope.wishes[i].delay = $scope.setDelay();
+				}
 			});
 			$scope.newWish = {
 				product: {},
@@ -55,5 +60,9 @@ app.controller('wishlistCtrl', function($scope, $http) {
 				priority: 25
 			}
 		});
+	}
+
+	$scope.setDelay = function() {
+		return Math.floor(Math.random() * 5 + 1);
 	}
 });
