@@ -52,6 +52,18 @@ module.exports.routes = {
     controller: 'StoryController',
     action: 'get',
     skipAssets: true
+  },
+
+  'gain/:id/:amount': {
+    controller: 'GainController',
+    action: 'index',
+    skipAssets: true
+  },
+
+  'spent/:id/:amount': {
+    controller: 'SpentController',
+    action: 'index',
+    skipAssets: true
   }
 
   /***************************************************************************

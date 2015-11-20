@@ -63,7 +63,10 @@ module.exports.http = {
                   id: profile.id,
                   name: profile.displayName,
                   photo: profile.photos[0].value,
-                  provider: profile.provider
+                  provider: profile.provider,
+                  budget: 0,
+                  spent: 0,
+                  rating: 0
                 };
                 User.create(user, function(err, model) {
                   if(err)

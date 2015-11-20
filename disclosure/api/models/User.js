@@ -27,6 +27,9 @@ module.exports = {
     },
     rating: {
       type: 'float'
+    },
+    spent: {
+      type: 'float'
     }
   }
 };
