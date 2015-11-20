@@ -15,6 +15,10 @@ module.exports = {
 				console.log(error);
 			user.spent += amount;
 			user.budget -= amount;
+			user.save(function(err, user) {
+					res.send(user);
+			})
+
 		});
 	}
 };

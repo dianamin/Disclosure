@@ -10,10 +10,14 @@ module.exports = {
 		var id = req.param('id');
 		var amount = req.param('amount');
 
-		User.findOne().where({id: id}).exec(function(error, user) {
+		User.update({id: id}).exec(function(error, user) {
 			if(error)
 				console.log(error);
 			user.budget += amount;
+			user.save(function(err, user) {
+					res.send(user);
+			});
+
 		});
 	}
 };
