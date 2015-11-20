@@ -36,7 +36,7 @@ module.exports.routes = {
     view: 'pages/login'
   },
 
-  '/product/:id': {
+  '/product/page/:id': {
     controller: 'ProductController',
     action: 'page',
     skipAssets: true
