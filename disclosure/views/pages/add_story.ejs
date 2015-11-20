@@ -32,15 +32,20 @@
         picture: $('#picture').val(),
       };
 
+      console.log(data);
+
       $.ajax({
         type: 'POST',
         url: '../story/create',
         dataType: 'application/json',
+        data: data,
         success: function(data) {
           console.log(data);
+          window.location.href = '../product/new';
         },
         error: function(err) {
           console.log(err);
+          window.location.href = '../product/new';
         }
       });
     });

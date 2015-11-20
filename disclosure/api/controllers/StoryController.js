@@ -13,11 +13,12 @@ module.exports = {
 	},
 	create: function(req, res) {
 		Guid.create();
+		console.log(req.body);
 		var data = {
 			id: Guid.raw(),
-			user_id: req.data.user_id,
-			description: req.data.description,
-			picture: req.data.picture,
+			user_id: req.body.user_id,
+			description: req.body.description,
+			picture: req.body.picture,
 			likes: 0
 		};
 
