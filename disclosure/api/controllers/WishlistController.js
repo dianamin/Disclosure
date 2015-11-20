@@ -30,7 +30,7 @@ module.exports = {
 	},
 
 	get: function(req, res) {
-		Wish.find().where({user_id: req.user.id}).exec(function(req, models) {
+		Wish.find().where({user_id: req.user.id}).exec(function(err, models) {
 			if(err)
 				console.log(err);
 			res.send(models);
