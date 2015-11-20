@@ -8,6 +8,9 @@
 var Guid = require('guid');
 
 module.exports = {
+	index: function(req, res) {
+			res.render('pages/add_story', {_layoutFile: '../shared/home_layout.ejs', user: req.user});
+	},
 	create: function(req, res) {
 		Guid.create();
 		var data = {
