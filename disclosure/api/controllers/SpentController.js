@@ -20,5 +20,9 @@ module.exports = {
 			})
 
 		});
+	},
+
+	add: function(req, res) {
+		res.render('pages/spent', {_layoutFile: '../shared/home_layout.ejs', user: req.user});
 	}
 };

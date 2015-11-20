@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+
 	index: function(req, res) {
 		var id = req.param('id');
 		var amount = req.param('amount');
@@ -19,5 +20,9 @@ module.exports = {
 			});
 
 		});
+	},
+	add: function(req, res) {
+			res.render('pages/gain', {_layoutFile: '../shared/home_layout.ejs', user: req.user});
 	}
+
 };
