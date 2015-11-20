@@ -16,7 +16,7 @@ module.exports = {
 		console.log(req.body);
 		Guid.create();
 		var data = {
-			id: Guid.value,
+			id: Guid.raw(),
 			name: req.body.name,
 			picture: req.body.picture
 		};
