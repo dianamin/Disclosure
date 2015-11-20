@@ -40,6 +40,18 @@ module.exports.routes = {
     controller: 'ProductController',
     action: 'page',
     skipAssets: true
+  },
+
+  '/story/like/:id': {
+    controller: 'StoryController',
+    action: 'like',
+    skipAssets: true
+  },
+
+  'story/get/:user_id': {
+    controller: 'StoryController',
+    action: 'get',
+    skipAssets: true
   }
 
   /***************************************************************************
