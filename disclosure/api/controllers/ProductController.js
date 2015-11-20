@@ -34,5 +34,15 @@ module.exports = {
 				console.log(error);
 			res.send(models);
 		});
+	},
+
+	page: function(req, res) {
+		var id = req.param('id');
+		Product.findOne().where({id: id}).exec(function(error, model) {
+			if(error)
+				console.log(error);
+			res.render('pages/product', {_layoutFile: '../shared/home_layout', user: req.user, product: model});
+		});
+
 	}
 };
