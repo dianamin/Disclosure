@@ -1,3 +1,6 @@
+<!-- Include JQuery -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <center>
 	<div style = "width: 80%;">
 		<div class="mdl-grid" style = "height: 40%;">
@@ -14,15 +17,30 @@
 		</div>
 
 		<h3> Ce mai fac prietenii mei zgârciți? </h3>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
-		<div class = "story-container"> abcd </div>
+		<div id="stories">
+			<div class = "story-container"> abcd </div>
+		</div>
 
-		
+
 	</div>
 </center>
+
+<script>
+	$(document).ready(function() {
+		$.ajax({
+			url: '../story/get/<%=user.id%>',
+			type: 'GET',
+			contentType: 'application/json',
+			success: function(data) {
+				console.log(data);
+				for(var i=0; i < data.length; i++) {
+					$('#stories').append('<div class="story-container">' + data[i].description + '</div>');
+				}
+			},
+			error: function(data) {
+				console.log(data);
+			}
+		});
+	});
+
+</script>

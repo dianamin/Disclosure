@@ -48,7 +48,7 @@ module.exports.routes = {
     skipAssets: true
   },
 
-  'story/get/:user_id': {
+  'story/get/:id': {
     controller: 'StoryController',
     action: 'get',
     skipAssets: true

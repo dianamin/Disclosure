@@ -40,9 +40,9 @@ module.exports = {
 	},
 
 	get: function(req, res) {
-		var userId = req.param('user_id');
-
-		Story.find().where({user_id: userId}).exec(function(error, models) {
+		var id = req.param('id');
+		console.log(id);
+		Story.find().where({user_id: id}).exec(function(error, models) {
 			if(error)
 				console.log(error);
 			res.send(models);
