@@ -33,7 +33,7 @@
 
 
 		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4"ng-model = "newWish.price">
+			    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4"ng-model = "newWish.price" />
 			    <label class="mdl-textfield__label" for="sample4"> Product Price </label>
 			    <span class="mdl-textfield__error">Input is not a number!</span>
 
@@ -50,7 +50,14 @@
 	<div class = "sticky-note" ng-repeat = "wish in wishes">
 		<h4> {{wish.product.name}} </h4>
 		<p> $ {{wish.price}} </p>
-		<p> Priority: {{wish.priority}} </p>
+		<input class="mdl-slider mdl-js-slider" type="range"
+		  min="0" max="100" value="25" tabindex="0" ng-model = "wish.priority" disabled />
+		<button ng-click = "fulfilWish(wish)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+			<i class="material-icons">check circle</i>
+		</button>
+		<button ng-click = "cancelWish(newWish)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+			<i class="material-icons"> X </i>
+		</button>
 	</div>
 </center>
 
