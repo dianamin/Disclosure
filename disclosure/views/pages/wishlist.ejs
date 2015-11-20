@@ -47,11 +47,10 @@
 			<i class="material-icons">save</i>
 		</button>
 	</div>
-	<div class = "sticky-note">
-		abc
-	</div>
-	<div class = "sticky-note">
-		abc
+	<div class = "sticky-note" ng-repeat = "wish in wishes">
+		<h4> {{wish.product.name}} </h4>
+		<p> $ {{wish.price}} </p>
+		<p> Priority: {{wish.priority}} </p>
 	</div>
 </center>
 
