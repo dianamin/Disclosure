@@ -13,4 +13,19 @@ h3 {
 	display: inline-block;
 	border-radius: 15px;	
 	margin: 10px;
+	box-shadow: 2px 2px 20px #999999;
+	cursor: pointer;
+
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+
+.story-container:hover {
+	transform: skew(2deg, 2deg);
+	-moz-transform: skew(2deg, 2deg);
+	-ms-transform: skew(2deg, 2deg);
+	-webkit-transform: skew(2deg, 2deg);
+	-o-transform: skew(2deg, 2deg);
 }
