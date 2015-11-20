@@ -54,7 +54,7 @@ module.exports.http = {
         },
         // facebook will send back the tokens and profile
         function(access_token, refresh_token, profile, done) {
-
+            console.log(profile);
             User.count({id: profile.id}).exec(function(error, found) {
               if(error)
                 console.log(error);
