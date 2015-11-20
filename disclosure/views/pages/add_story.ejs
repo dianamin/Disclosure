@@ -1,0 +1,48 @@
+<!-- Include JQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<h1> Add a new post </h1>
+
+<!-- Simple Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="description">
+    <label class="mdl-textfield__label" for="sample1">Description</label>
+  </div>
+</form>
+
+<!-- Simple Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="picture">
+    <label class="mdl-textfield__label" for="sample1">Photo Url</label>
+  </div>
+</form>
+
+<button class="mdl-button mdl-js-button mdl-button--raised" id="post">
+  Post
+</button>
+
+<script>
+  $(document).ready(function() {
+    $('#post').click(function() {
+      var data = {
+        user_id: '<%=user.id %>',
+        description: $('#description').val(),
+        picture: $('#picture').val(),
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '../story/create',
+        dataType: 'application/json',
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(err) {
+          console.log(err);
+        }
+      });
+    });
+  });
+</script>

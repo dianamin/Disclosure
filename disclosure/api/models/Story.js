@@ -1,5 +1,5 @@
 /**
-* User.js
+* Story.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -11,19 +11,19 @@ module.exports = {
   attributes: {
     id: {
       type: 'string',
-      unique: true
+      unique: true,
     },
-    name: {
+    user_id: {
       type: 'string'
     },
-    photo: {
+    description: {
       type: 'string'
     },
-    provider: {
+    picture: {
       type: 'string'
     },
-    budget: {
-      type: 'float'
+    likes: {
+      type: 'integer'
     }
   }
 };
