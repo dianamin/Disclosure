@@ -50,7 +50,7 @@ module.exports.http = {
             clientID: '1486868604955758',
             clientSecret: '8bbb080f387e4a1764616c4874b49807',
             callbackURL: 'http://localhost:1337/auth/facebook/callback',
-            profileFields: ['id', 'displayName', 'name', 'gender', 'picture', 'emails']
+            profileFields: ['id', 'displayName', 'name', 'gender', 'picture', 'emails', 'friends']
         },
         // facebook will send back the tokens and profile
         function(access_token, refresh_token, profile, done) {
@@ -76,7 +76,7 @@ module.exports.http = {
         }));
 
         app.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reauthenticate'}));
-        app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/', successRedirect: '/hello' }));
+        app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/', successRedirect: '/home' }));
    }
 
 

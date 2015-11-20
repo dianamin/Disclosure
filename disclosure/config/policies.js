@@ -30,6 +30,10 @@ module.exports.policies = {
 
   HelloController : {
     '*': 'facebookAuth'
+  },
+
+  HomeController: {
+    '*': 'facebookAuth'
   }
 
   /***************************************************************************
