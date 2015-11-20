@@ -21,6 +21,9 @@ module.exports = {
     },
     provider: {
       type: 'string'
+    },
+    budget: {
+      type: 'float'
     }
   }
 };
