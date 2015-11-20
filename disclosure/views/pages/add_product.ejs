@@ -3,7 +3,6 @@
 	.demo-card-image.mdl-card {
 	  width: 200px;
 	  height: 100px;
-	  background: url('https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffarm2.staticflickr.com%2F1265%2F4666231979_2644531af8_z.jpg&f=1') center / cover;
 	}
 	.demo-card-image > .mdl-card__actions {
 	  height: 52px;
@@ -18,19 +17,26 @@
 </style>
 
 
-<div id = "container">
+<script src = "../js/angular.js"></script>
+<script src = "../js/init-app.js"></script>
+<script src = "../js/directives/backImg.js"></script>
+<script src = "../js/controllers/addProductCtrl.js"></script>
+
+
+
+<div id = "container" ng-app = "app">
 	<h3> Add a product </h3>
 
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="sample3">
-				<label class="mdl-textfield__label" for="sample3"> Product Name </label>
+				<input class="mdl-textfield__input" type="text" id="name" ng-model = "product.name">
+				<label class="mdl-textfield__label" for="name"> Product Name </label>
 			</div>
 			<br />
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="sample3">
-				<label class="mdl-textfield__label" for="sample3"> Product Image URL </label>
+				<input class="mdl-textfield__input" type="text" id="url" ng-model = "product.url">
+				<label class="mdl-textfield__label" for="url"> Product Image URL </label>
 			</div>
 			<br />
 			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
@@ -38,13 +44,16 @@
 			</button>
 		</div>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
-			<div class="demo-card-image mdl-card mdl-shadow--2dp">
+			<div class = "demo-card-image mdl-card mdl-shadow--2dp" ng-style="{'background-image':'url('+product.url+')', 'background-size' : 'contain', 'background-repeat' : 'no-repeat'}">
 				<div class="mdl-card__title mdl-card--expand"></div>
 				<div class="mdl-card__actions">
 					<span class="demo-card-image__filename"> {{product.name}} </span>
 				</div>
 			</div>
 		</div>
+ 
+		{{product.url}}
+		<div back-img = "{{product.url}}"> abcd <br /> <br /></div>
 	</div>
 
 </div>
