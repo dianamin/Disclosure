@@ -10,7 +10,7 @@ module.exports = {
 		var id = req.param('id');
 		var amount = req.param('amount');
 
-		User.update({id: id}).exec(function(error, user) {
+		User.findOne({id: id}).exec(function(error, user) {
 			if(error)
 				console.log(error);
 			user.budget += amount;
