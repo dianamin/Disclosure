@@ -14,8 +14,9 @@ module.exports = {
 
 	create: function(req, res) {
 		console.log(req.body);
+		Guid.create();
 		var data = {
-			id: Guid.create(),
+			id: Guid.value,
 			name: req.body.name,
 			picture: req.body.picture
 		};
