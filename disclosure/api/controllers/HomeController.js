@@ -10,7 +10,4 @@ module.exports = {
 		res.render('pages/home', {_layoutFile: '../shared/home_layout.ejs', user: req.user});
 	},
 
-	wishlist: function(req, res) {
-		res.render('pages/wishlist', {_layoutFile: '../shared/home_layout.ejs', user: req.user});
-	}
 };
