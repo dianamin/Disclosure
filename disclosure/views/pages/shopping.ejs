@@ -1,4 +1,5 @@
 <link rel = "stylesheet" href = "../styles/budget.css" />
+<link rel = "stylesheet" href = "../styles/greeny.css" />
 
 <script src = "../js/angular.js"></script>
 <script src = "../js/ui-bootstrap.js"></script>
@@ -35,8 +36,15 @@
 			<span class="mdl-textfield__error">Input is not a number!</span>
 		</div>
 
-		<div class = "reaction">
-			{{getReaction(gained)}}
+
+		<div>
+			<div class = "little-greeny-container">
+				<div class = "happy-little-greeny-container">
+					<img src = "../images/greeny.png" class = "little-greeny" />
+				</div>
+			</div>
+			<div class = "greeny-speech"> {{getReaction(cost)}} </div>
+			<br /> <br />
 		</div>
 
 		<br /> <br />

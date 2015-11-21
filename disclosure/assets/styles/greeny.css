@@ -33,7 +33,7 @@ body {
 }
 
 .little-greeny {
-	height: 65px;
+	height: 50px;
 
 	animation: greenyFade 2s;
 	-webkit-animation: greenyFade 2s;

@@ -13,4 +13,20 @@ app.controller('spentCtrl', function($scope, $http) {
 			alert('Congrats!');
 		});
 	}
+
+	$scope.reactions = [
+		"Wow! Black friday much?",
+		"Wow!",
+		"Your invest was really good, congrats!",
+		"People say you could have spent less on that!",
+		"It might have been a little too much"
+	];
+
+
+	$scope.getReaction = function(cost) {
+		var reactionIndex = Math.floor(cost / 100);
+		if (reactionIndex >= $scope.reactions.length)
+			reactionIndex = $scope.reactions.length - 1;
+		return $scope.reactions[reactionIndex];
+	}
 });
