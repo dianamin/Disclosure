@@ -1,27 +1,31 @@
+<link rel = "stylesheet" href = "../styles/add_story.css" />
 <!-- Include JQuery -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-<h1> Add a new post </h1>
 
-<!-- Simple Textfield -->
-<form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="description">
-    <label class="mdl-textfield__label" for="sample1">Description</label>
-  </div>
-</form>
+<center id = "container">
+  <h2> Add a new post </h2>
 
-<!-- Simple Textfield -->
-<form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="picture">
-    <label class="mdl-textfield__label" for="sample1">Photo Url</label>
-  </div>
-</form>
+  <!-- Simple Textfield -->
+  <form action="#">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="description">
+      <label class="mdl-textfield__label" for="sample1">Description</label>
+    </div>
+  </form>
 
-<button class="mdl-button mdl-js-button mdl-button--raised" id="post">
-  Post
-</button>
+  <!-- Simple Textfield -->
+  <form action="#">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="picture">
+      <label class="mdl-textfield__label" for="sample1">Photo Url</label>
+    </div>
+  </form>
+
+  <button class="mdl-button mdl-js-button mdl-button--raised" id="post">
+    Post
+  </button>
+</center>
 
 <script>
   $(document).ready(function() {
