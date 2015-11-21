@@ -13,6 +13,21 @@
 	margin: 15px;
 }
 
+.greeny-speech-small {
+	background-color: white;
+	text-align; center;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: inline-block;
+	vertical-align: bottom;
+	font-size: 15px;
+	padding: 10px;
+	color: #999999;
+	margin: 15px;
+}
+
 .little-greeny {
 	height: 50px;
 
