@@ -24,8 +24,9 @@ app.controller('realisableWishesCtrl', function($scope, $http) {
 
 		for (var i = 0; i < $scope.wishes.length; i++) {
 			$scope.wishes[i].product = $scope.findProduct($scope.wishes[i].product_id);
-			$scope.wishes[i].delay = $scope.setDelay();
 		}
+
+		console.log($scope.wishes);
 	});
 
 	$scope.chooseWish = function (wish) { 
