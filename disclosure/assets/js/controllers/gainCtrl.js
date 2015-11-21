@@ -82,7 +82,7 @@ app.controller('gainCtrl', function($scope, $http) {
 	$scope.addGain = function() {
 		var data = "";
 		$http.post($scope.userId + '/' + $scope.gained, data).then(function() {
-			alert('Congrats!');
+			window.location.href = "/home";
 		});
 	}
 });
