@@ -67,7 +67,7 @@
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 	  <header class="mdl-layout__header">
 	    <div class="mdl-layout__header-row">
-			  <img src="<%- user.photos[0].value %>" class="demo-avatar">
+			  <img src="<%- user.photos[0].value %>" class="demo-avatar" style = "height: 40px; width: 40px; margin-right: 10px;"/>
 				<span class="mdl-layout-title"><%= user.displayName %></span>
 	      <!-- Add spacer, to align navigation to the right -->
 	      <div class="mdl-layout-spacer"></div>
@@ -75,8 +75,8 @@
 	      <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="/home"> Home </a>
 	        <a class="mdl-navigation__link" href="/wishlist"> Wishlist </a>
-	        <a class="mdl-navigation__link" href="">Link</a>
-	        <a class="mdl-navigation__link" href="">Link</a>
+	        <a class="mdl-navigation__link" href="/gain/add"> Got money </a>
+	        <a class="mdl-navigation__link" href="/shopping"> Spent money </a>
 	      </nav>
 	    </div>
 	  </header>
@@ -85,8 +85,8 @@
 	    <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="/home"> Home </a>
             <a class="mdl-navigation__link" href="/wishlist"> Wishlist </a>
-	      <a class="mdl-navigation__link" href="">Link</a>
-	      <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="/gain/add"> Got money </a>
+            <a class="mdl-navigation__link" href="/shopping"> Spent money </a>
 	    </nav>
 
 	  </div>

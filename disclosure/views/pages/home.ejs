@@ -8,6 +8,7 @@
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background-size: cover;
+  height: 70%;
 }
 
 img {
@@ -18,12 +19,20 @@ img {
 
 <!-- Include JQuery -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
+<script src = "../js/angular.js"></script>
+<script src = "../js/ui-bootstrap.js"></script>
 
 <script src="../js/charts.js"></script>
 <script src="../js/Chart_lib.js"></script>
 
 <center>
+<script src = "../js/init-app.js"></script>
+<script src = "../js/controllers/realisableWishesCtrl.js"></script>
+
+<center ng-app = "app" ng-controller = "realisableWishesCtrl">
+	<div style = "display: none;">
+		{{userId = <%=user.id%>}}
+	</div>
 	<div style = "width: 80%;">
 		<div class="mdl-grid" style = "height: 50%;">
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
@@ -34,10 +43,14 @@ img {
 						</div>
 					</div>
 			</div>
-			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet" style = "overflow-y: scroll;">
 				<h3> Ce investiții din wishlist pot face </h3>
 
-				#lista drăgu
+				<table class = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style = "width: 90%;">
+					<tr ng-repeat = "wish in wishes | orderBy: 'price' | filter: chooseWish">
+						<td class = "mdl-data-table__cell--non-numeric"> {{wish.product.name}} </td>
+					</tr>
+				</table>
 			</div>
 		</div>
 
@@ -67,7 +80,10 @@ img {
 							for(var j = 0; j < users.length; j++) {
 								if(users[j].id === data[i].user_id) {
 										//$('#stories').append('<div class="story-container">' + data[i].description + '<img src="'+ users[j].photo +'" /> <img src="'+ data.picture +'" /> Likes '+ data[i].likes + '</div>');
+//										$('#stories').append('<div class="demo-card-square mdl-card mdl-shadow--2dp" style = "display: inline-block; vertical-align: top; margin: 10px;"><div class="mdl-card__title mdl-card--expand" style="background-image:url(' + data[i].picture + ')" ><h2 class="mdl-card__title-text"><img src="' + users[j].photo +'" />' + users[j].name + '</h2></div><div class="mdl-card__supporting-text">' + data[i].description + '</div>  <div class="mdl-card__actions mdl-card--border"><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">love</i></button></div></div>');
+
 										$('#stories').append('<div style = "display: inline-block; margin: 10px;"> <div class="demo-card-square mdl-card mdl-shadow--2dp"><div class="mdl-card__title mdl-card--expand" style="background-image:url(' + data[i].picture + ')" ><h2 class="mdl-card__title-text"><img src="' + users[j].photo +'" />' + users[j].name + '</h2></div><div class="mdl-card__supporting-text">' + data[i].description + '</div>  <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Like</a></div></div> </div>');
+
 								}
 							}
 

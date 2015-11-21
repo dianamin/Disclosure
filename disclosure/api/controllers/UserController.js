@@ -12,5 +12,14 @@ module.exports = {
 				console.log(err);
 			res.send(users);
 		});
+	},
+
+	get: function(req, res) {
+		var id = req.param('id');
+		User.findOne({id: id}).exec(function(err, user){
+			if(err)
+				console.log(err);
+			res.send(user);
+		});
 	}
 };

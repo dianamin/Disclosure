@@ -1,5 +1,6 @@
 app.controller('realisableWishesCtrl', function($scope, $http) {
-	$scope.userBudget = 0;
+	$scope.userBudget = 100;
+	$scope.userId = "";
 
 	$http({method: 'GET', url: '/product/get'}).success(function(data, status, headers, config) {
 		$scope.products = data;
@@ -14,6 +15,7 @@ app.controller('realisableWishesCtrl', function($scope, $http) {
 	$scope.findProduct = function(id) {
 		for (var i = 0; i < $scope.products.length; i++)
 			if ($scope.products[i].id == id) return $scope.products[i];
+		return {};
 	}
 
 
@@ -22,7 +24,12 @@ app.controller('realisableWishesCtrl', function($scope, $http) {
 
 		for (var i = 0; i < $scope.wishes.length; i++) {
 			$scope.wishes[i].product = $scope.findProduct($scope.wishes[i].product_id);
-			$scope.wishes[i].delay = $scope.setDelay();
 		}
+
+		console.log($scope.wishes);
 	});
+
+	$scope.chooseWish = function (wish) { 
+	    return wish.price <= $scope.userBudget; 
+	};
 });
