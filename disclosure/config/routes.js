@@ -64,6 +64,12 @@ module.exports.routes = {
     controller: 'SpentController',
     action: 'index',
     skipAssets: true
+  },
+
+  '/statistics/:id': {
+    controller: 'StatisticsController',
+    action: 'get',
+    skipAssets: true
   }
 
   /***************************************************************************

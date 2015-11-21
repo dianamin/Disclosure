@@ -13,7 +13,9 @@ module.exports = {
       type: 'string',
       unique: true
     },
-
+    user_id: {
+      type: 'string',
+    },
     amount: {
       type: 'float'
     }

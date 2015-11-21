@@ -18,7 +18,7 @@ module.exports = {
 			user.spent += parseInt(amount);
 			user.budget -= parseInt(amount);
 			user.save(function(err, user) {
-			Transaction.create({id: Guid.raw(), amount: -1 * parseFloat(amount)}).exec(function(err, tr) {
+			Transaction.create({id: Guid.raw(),user_id: id,  amount: -1 * parseFloat(amount)}).exec(function(err, tr) {
 					res.send(tr);
 			});
 

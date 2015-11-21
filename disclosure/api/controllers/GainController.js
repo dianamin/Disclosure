@@ -18,10 +18,9 @@ module.exports = {
 				console.log(error);
 			user.budget += parseFloat(amount);
 			user.save(function(err, user) {
-					Transaction.create({id: Guid.raw(), amount: parseFloat(amount)}).exec(function(err, tr) {
+					Transaction.create({id: Guid.raw(), user_id: id, amount: parseFloat(amount)}).exec(function(err, tr) {
 							res.send(tr);
 					});
-
 			});
 
 		});
