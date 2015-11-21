@@ -49,7 +49,7 @@ module.exports.http = {
         passport.use(new FacebookStrategy({
             clientID: '1486868604955758',
             clientSecret: '8bbb080f387e4a1764616c4874b49807',
-            callbackURL: 'http://localhost:1337/auth/facebook/callback',
+            callbackURL: '/auth/facebook/callback',
             profileFields: ['id', 'displayName', 'name', 'gender', 'picture', 'emails', 'friends']
         },
         // facebook will send back the tokens and profile
