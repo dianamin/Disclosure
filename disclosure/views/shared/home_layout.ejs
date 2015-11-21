@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/home_style.css">
+    <link rel="stylesheet" href="/styles/home.css">
 
 		<!-- Change Colors Pallette Here -->
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.teal-green.min.css">
@@ -58,6 +58,10 @@
     .demo-avatar {
       border-radius: 50%;
     }
+
+		a {
+			text-decoration: none !important;
+		}
     </style>
 
 	</head>
@@ -71,14 +75,14 @@
                   <img src="<%- user.photos[0].value %>"
                        class="demo-avatar"
                        style = "height: 40px; width: 40px; margin-right: 10px;"/>
-              </a>
+        </a>
 				<span class="mdl-layout-title"><%= user.displayName %></span>
 	      <!-- Add spacer, to align navigation to the right -->
 	      <div class="mdl-layout-spacer"></div>
 	      <!-- Navigation. We hide it in small screens. -->
 	      <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="/home"> Home </a>
-	        <a class="mdl-navigation__link" href="/wishlist"> Wishlist </a>
+          <a class="mdl-navigation__link" href="/home"> Home </a>
+	        <a class="mdl-navigation__link" href="/wishlist">Wishlist </a>
 	        <a class="mdl-navigation__link" href="/gain/add"> Got money </a>
 	        <a class="mdl-navigation__link" href="/shopping"> Spent money </a>
           <a class="mdl-navigation__link" href="/story"> Tell your friends </a>
