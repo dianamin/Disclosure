@@ -4,9 +4,11 @@
  * @description :: Server-side logic for managing spents
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+var Guid = require('guid');
 
 module.exports = {
 	index: function(req, res) {
+		Guid.create();
 		var id = req.param('id');
 		var amount = req.param('amount');
 
@@ -16,7 +18,10 @@ module.exports = {
 			user.spent += parseInt(amount);
 			user.budget -= parseInt(amount);
 			user.save(function(err, user) {
-					res.send(user);
+			Transaction.create({id: Guid.raw(),user_id: id,  amount: -1 * parseFloat(amount)}).exec(function(err, tr) {
+					res.send(tr);
+			});
+
 			})
 
 		});
