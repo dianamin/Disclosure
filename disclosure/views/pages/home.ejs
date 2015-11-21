@@ -33,9 +33,23 @@
 			contentType: 'application/json',
 			success: function(data) {
 				console.log(data);
-				for(var i=0; i < data.length; i++) {
-					$('#stories').append('<div class="story-container">' + data[i].description + '</div>');
-				}
+				$.ajax({
+					url: '../user',
+					type: 'GET',
+					contentType: 'application/json',
+					success: function(users) {
+						console.log(users);
+						for(var i=0; i < data.length; i++) {
+							for(var j = 0; j < users.length; j++) {
+								if(users[j].id === data[i].user_id) {
+										$('#stories').append('<div class="story-container">' + data[i].description + '<img src="'+ users[j].photo +'" /> <img src="'+ data.picture +'" /> Likes '+ data[i].likes + '</div>');
+								}
+							}
+
+						}
+					}
+				});
+
 			},
 			error: function(data) {
 				console.log(data);
