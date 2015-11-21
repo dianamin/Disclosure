@@ -67,7 +67,11 @@
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 	  <header class="mdl-layout__header">
 	    <div class="mdl-layout__header-row">
-			  <img src="<%- user.photos[0].value %>" class="demo-avatar" style = "height: 40px; width: 40px; margin-right: 10px;"/>
+			  <a href="/home"> 
+                  <img src="<%- user.photos[0].value %>" 
+                       class="demo-avatar" 
+                       style = "height: 40px; width: 40px; margin-right: 10px;"/>
+              </a>
 				<span class="mdl-layout-title"><%= user.displayName %></span>
 	      <!-- Add spacer, to align navigation to the right -->
 	      <div class="mdl-layout-spacer"></div>

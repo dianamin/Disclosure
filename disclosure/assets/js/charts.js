@@ -1,6 +1,8 @@
 		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
+			// retrieve all dates from updated amount of money
+			// fix the edges of the interval with "Month dd", let the rest of them blank
+			labels : ["February 20th","","","","","March 15th"],
 			datasets : [
 					{
 						label: "My First dataset",
@@ -11,7 +13,6 @@
 						pointHighlightFill : "#fff",
 						pointHighlightStroke : "rgba(220,220,220,1)",
 						data : [randomScalingFactor(),
-						        randomScalingFactor(),
 						        randomScalingFactor(),
 						        randomScalingFactor(),
 						        randomScalingFactor(),
@@ -27,8 +28,7 @@
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
 					data : [randomScalingFactor(),
-							randomScalingFactor(),
-							randomScalingFactor(),
+						    randomScalingFactor(),
 							randomScalingFactor(),
 							randomScalingFactor(),
 							randomScalingFactor(),
