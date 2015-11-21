@@ -1,0 +1,34 @@
+.greeny-speech {
+	background-color: white;
+	text-align; center;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: inline-block;
+	vertical-align: bottom;
+	font-size: 25px;
+	padding: 20px;
+	color: #999999;
+	margin: 15px;
+}
+
+.little-greeny {
+	height: 50px;
+
+	animation: greenyFade 2s;
+	-webkit-animation: greenyFade 2s;
+}
+
+
+
+@keyframes greenyFade {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+@-webkit-keyframes greenyFade {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}

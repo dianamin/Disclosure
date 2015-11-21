@@ -1,3 +1,5 @@
+<link rel = "stylesheet" href = "styles/greeny.css" /.
+
 <!-- Square card -->
 <style>
 .demo-card-square.mdl-card {
@@ -96,7 +98,11 @@ $(document).ready(function() {
 	<div style = "width: 80%;">
 		<div class="mdl-grid" style = "height: 70%;">
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
-				<h3> Cât de zgârcit sunt </h3>
+  				<div>
+            <img src = "images/greeny.png" class = "little-greeny" />
+            <div class = "greeny-speech"> Your savings chart! </div>
+            <br /> <br />
+          </div>
 					<div style="width:90%">
 						<div>
 							<canvas id="chart1" height="300" width="400"></canvas>
@@ -104,7 +110,11 @@ $(document).ready(function() {
 					</div>
 			</div>
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet" style = "overflow-y: scroll;">
-				<h3> Ce investiții din wishlist pot face </h3>
+				<div>
+          <img src = "images/greeny.png" class = "little-greeny" />
+          <div class = "greeny-speech"> You've got enough money for this! </div>
+          <br /> <br />
+        </div>
 
 				<table class = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style = "width: 90%;">
 					<tr ng-repeat = "wish in wishes | orderBy: 'price' | filter: chooseWish">
@@ -113,8 +123,13 @@ $(document).ready(function() {
 				</table>
 			</div>
 		</div>
-
-		<h3> Ce mai fac prietenii mei zgârciți? </h3>
+      
+    <br /> <br /> 
+      <div>
+        <img src = "images/greeny.png" class = "little-greeny" />
+        <div class = "greeny-speech"> Wonder how are your friends doing? </div>
+        <br /> <br />
+      </div>
 		<div id="stories">
 		</div>
 
