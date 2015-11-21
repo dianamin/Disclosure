@@ -22,6 +22,10 @@ img {
 <script src = "../js/angular.js"></script>
 <script src = "../js/ui-bootstrap.js"></script>
 
+<script src="../js/charts.js"></script>
+<script src="../js/Chart_lib.js"></script>
+
+<center>
 <script src = "../js/init-app.js"></script>
 <script src = "../js/controllers/realisableWishesCtrl.js"></script>
 
@@ -30,11 +34,14 @@ img {
 		{{userId = <%=user.id%>}}
 	</div>
 	<div style = "width: 80%;">
-		<div class="mdl-grid" style = "height: 40%;">
+		<div class="mdl-grid" style = "height: 50%;">
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
 				<h3> Cât de zgârcit sunt </h3>
-
-				#grafic
+					<div style="width:70%">
+						<div>
+							<canvas id="chart1" height="300" width="400"></canvas>
+						</div>
+					</div>
 			</div>
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet" style = "overflow-y: scroll;">
 				<h3> Ce investiții din wishlist pot face </h3>
