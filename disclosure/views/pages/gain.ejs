@@ -1,1 +1,51 @@
-<h1> Gain </h1>
+<link rel = "stylesheet" href = "../styles/budget.css" />
+
+<script src = "../js/angular.js"></script>
+<script src = "../js/ui-bootstrap.js"></script>
+<script src = "../js/init-app.js"></script>
+<script src = "../js/controllers/gainCtrl.js"></script>
+
+<center ng-app = "app" ng-controller = "gainCtrl">
+	<div style = "display: none;">
+		{{userId = <%=user.id%>}}
+	</div>
+	<div id = "container">
+		<h3> Gain </h3>
+
+		<p> You gained some money? That's awesome! </p>
+
+
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4" ng-model = "gained">
+					<label class="mdl-textfield__label" for="sample4"> How much did you gain? </label>
+					<span class="mdl-textfield__error">Input is not a number!</span>
+				</div>
+
+				<div class = "reaction">
+					{{getReaction(gained)}}
+				</div>
+
+				<br /> <br />
+				<label> How did you gain? </label> <br />
+				<div class="mdl-textfield mdl-js-textfield">
+				    <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5"> </textarea>
+			  	</div>
+
+			  	<br />
+				<button class = "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ng-click = "addGain()">
+					<i class = "material-icons">add</i>
+				</button>
+			</div>
+			<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
+				<h4> Wanna gain more? </h4>
+				<table class = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+					<tr ng-repeat = "i in queue">
+						<td class = "mdl-data-table__cell--non-numeric"> {{savingAdvice[i]}} </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</center>
