@@ -10,7 +10,7 @@ app.controller('spentCtrl', function($scope, $http) {
 	$scope.addCost = function() {
 		var data = "";
 		$http.post('../spent/' + $scope.userId + '/' + $scope.cost, data).then(function() {
-			alert('Congrats!');
+			window.location.href = "/home";
 		});
 	}
 
