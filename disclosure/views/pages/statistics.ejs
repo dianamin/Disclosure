@@ -1,8 +1,77 @@
 <h1> statistics </h1>
 
 <br />
-<script src="../js/charts.js"></script>
+<!-- Include JQuery -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src = "../js/angular.js"></script>
+<script src = "../js/ui-bootstrap.js"></script>
+
 <script src="../js/Chart_lib.js"></script>
+<script>
+var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+var lineChartData = {
+  // retrieve all dates from updated amount of money
+  // fix the edges of the interval with "Month dd", let the rest of them blank
+  labels : ["February 20th","April","May","","March 15th"],
+  datasets : [ {
+      label: "My Second dataset",
+      fillColor : "rgba(151,187,205,0.2)",
+      strokeColor : "rgba(151,187,205,1)",
+      pointColor : "rgba(151,187,205,1)",
+      pointStrokeColor : "#fff",
+      pointHighlightFill : "#fff",
+      pointHighlightStroke : "rgba(151,187,205,1)",
+      data : [randomScalingFactor(),
+            randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor()]
+    }
+  ]
+
+}
+$(document).ready(function() {
+  var ctx = document.getElementById("chart1").getContext("2d");
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+  $.ajax({
+    type: 'GET',
+    url: '../statistics/<%-user.id %>',
+    contentType: 'application/json',
+    success: function(data) {
+      console.log(data);
+      var values = [];
+      var value = 0;
+      var ox = [];
+      for(var i = 0; i < data.length; i++) {
+        value += data[i].amount;
+        values.push(value);
+        ox.push(data[i].updatedAt);
+      }
+      lineChartData.datasets[0].data = values;
+      
+      var date = ox[0];
+      date = new Date(date);
+      lineChartData.labels = [];
+      lineChartData.labels.push(monthNames[date.getMonth()] + " " + date.getDate());
+      for (var i = 1; i < data.length - 1; i++) {
+      	lineChartData.labels.push("");
+      }
+      var date = ox[ox.length - 1];
+      date = new Date(date);
+      lineChartData.labels.push(monthNames[date.getMonth()] + " " + date.getDate());
+	   
+      window.myLine = new Chart(ctx).Line(lineChartData, {
+        responsive: true
+      });
+    }
+  });
+
+
+});
+</script>
+
 
 <div style="width:40%">
 	<div>
