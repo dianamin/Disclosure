@@ -47,5 +47,13 @@ module.exports = {
 				console.log(error);
 			res.send(models);
 		});
+	},
+
+	all: function(req, res) {
+		Story.find().exec(function(error, stories) {
+			if(error)
+				console.log(error);
+			res.send(stories);
+		});
 	}
 };
