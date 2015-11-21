@@ -18,8 +18,16 @@ img {
 
 <!-- Include JQuery -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src = "../js/angular.js"></script>
+<script src = "../js/ui-bootstrap.js"></script>
 
-<center>
+<script src = "../js/init-app.js"></script>
+<script src = "../js/controllers/realisableWishesCtrl.js"></script>
+
+<center ng-app = "app" ng-controller = "realisableWishesCtrl">
+	<div style = "display: none;">
+		{{userId = <%=user.id%>}}
+	</div>
 	<div style = "width: 80%;">
 		<div class="mdl-grid" style = "height: 40%;">
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
@@ -27,10 +35,14 @@ img {
 
 				#grafic
 			</div>
-			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet" style = "overflow-y: scroll;">
 				<h3> Ce investiții din wishlist pot face </h3>
 
-				#lista drăgu
+				<table class = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style = "width: 90%;">
+					<tr ng-repeat = "wish in wishes | orderBy: 'price' | filter: chooseWish">
+						<td class = "mdl-data-table__cell--non-numeric"> {{wish.product.name}} </td>
+					</tr>
+				</table>
 			</div>
 		</div>
 
