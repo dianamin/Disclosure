@@ -70,6 +70,11 @@ module.exports.routes = {
     controller: 'StatisticsController',
     action: 'get',
     skipAssets: true
+  },
+  '/user/:id': {
+    controller: 'UserController',
+    action: 'get',
+    skipAssets: true
   }
 
   /***************************************************************************
