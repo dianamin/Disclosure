@@ -4,6 +4,8 @@
 <script src = "../js/init-app.js"></script>
 <script src = "../js/controllers/wishlistCtrl.js"></script>
 
+<link rel = "stylesheet" href = "../styles/greeny.css" />
+
 <div ng-app = "app" ng-controller = "wishlistCtrl">
 
 <center id = "container">	
@@ -11,12 +13,20 @@
 	<h3> My wishlist </h3>
 	<br />
 
+	<div>
+		<img src = "images/greeny.png" class = "little-greeny" />
+		<div class = "greeny-speech-small">
+			Can't find the product you're looking for? 
+			<br /> <br />
+			<a href = "product/new"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				Add it!
+			</button> </a>
+		</div>
+		<br /> <br />
+	</div>
 	<div style = "text-align: justify;">
 		<p> 
-			Can't find the product you're looking for? 
-			<a href = "product/new"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-				Add a product!
-			</button> </a>
+			
 		</p>
 	</div>
 
