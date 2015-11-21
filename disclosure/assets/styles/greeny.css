@@ -1,3 +1,7 @@
+body {
+	background-color: #eeeeee;
+}
+
 .greeny-speech {
 	background-color: white;
 	text-align; center;
@@ -46,4 +50,28 @@
 @-webkit-keyframes greenyFade {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
+}
+
+
+.little-greeny-container {
+	height: 100px;
+	display: inline-block;
+}
+
+.happy-little-greeny-container {
+	animation: greenyJump 2s infinite;
+	-webkit-animation: greenyJump 2s infinite;
+}
+
+@keyframes greenyJump {
+	0% {padding-top: 30px;}
+	50% {padding-top: 0px;}
+	100% {padding-top: 30px;}
+}
+
+
+@-webkit-keyframes greenyJump {
+	0% {padding-top: 30px;}
+	50% {padding-top: 0px;}
+	100% {padding-top: 30px;}
 }
