@@ -19,13 +19,20 @@ img {
 <!-- Include JQuery -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
+
+<script src="../js/charts.js"></script>
+<script src="../js/Chart_lib.js"></script>
+
 <center>
 	<div style = "width: 80%;">
-		<div class="mdl-grid" style = "height: 40%;">
+		<div class="mdl-grid" style = "height: 50%;">
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
 				<h3> Cât de zgârcit sunt </h3>
-
-				#grafic
+					<div style="width:70%">
+						<div>
+							<canvas id="chart1" height="300" width="400"></canvas>
+						</div>
+					</div>
 			</div>
 			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
 				<h3> Ce investiții din wishlist pot face </h3>
