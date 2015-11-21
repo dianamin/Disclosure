@@ -1,1 +1,47 @@
-<h1>Shopping</h1>
+<link rel = "stylesheet" href = "../styles/budget.css" />
+
+<script src = "../js/angular.js"></script>
+<script src = "../js/ui-bootstrap.js"></script>
+<script src = "../js/init-app.js"></script>
+<script src = "../js/controllers/spentCtrl.js"></script>
+
+<center ng-app = "app" ng-controller = "spentCtrl">
+	<div style = "display: none;">
+		{{userId = <%=user.id%>}}
+	</div>
+	<div id = "container">
+		<h3> Shopping </h3>
+
+		<p> You spent some money? Let's see if it was a good investment! </p>
+		<div style = "text-align: justify;">
+			<p> 
+				Can't find the product you're looking for? 
+				<a href = "product/new"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+					Add a product!
+				</button> </a>
+			</p>
+		</div>
+
+
+
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" id="sample3" ng-model = "selected" typeahead-on-select = "setProduct($item)" typeahead = "product.name for product in products | filter:$viewValue | limitTo:4" />
+			<label class="mdl-textfield__label" for="sample3"> What did you buy? </label>
+		</div>
+
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4" ng-model = "cost">
+			<label class="mdl-textfield__label" for="sample4"> How much did you spend on it? </label>
+			<span class="mdl-textfield__error">Input is not a number!</span>
+		</div>
+
+		<div class = "reaction">
+			{{getReaction(gained)}}
+		</div>
+
+		<br /> <br />
+		<button class = "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ng-click = "addCost()">
+			<i class = "material-icons">add</i>
+		</button>
+	</div>
+</center>
